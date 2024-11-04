@@ -1,0 +1,69 @@
+<div class="header">
+    <div class="header-content">
+        <button class="Arrow-btn" (click)="goBack()">
+            <img src="UI/App/Arrow.png" alt="Arrow" class="Arrow" />
+        </button>
+        <h1>Table</h1>
+        <div class="cart-icon">
+            <img src="UI/App/Cart.png" alt="Cart" class="icon" />
+            <span class="item-count" *ngIf="totalQuantity() > 0">
+              {{ totalQuantity() }}
+          </span>
+        </div>
+    </div>   
+</div>
+
+<div class="bar">
+  <span class="cart-label">Shopping Cart</span> 
+  <span class="cart-summary">
+    <span [ngStyle]="{'color': '#E84C64', 'font-weight': '900'}">{{ totalQuantity() }}</span>
+    <span class="text-black">
+      <span *ngIf="totalQuantity() > 1"> Items</span>
+      <span *ngIf="totalQuantity() === 1"> Item</span>
+    </span> 
+    <span class="text-black">
+      Total <span [ngStyle]="{'color': '#E84C64', 'font-weight': '900'}">{{ totalPrice() | number:'1.2-2' }}</span> Baht
+    </span>
+  </span>
+</div>
+
+<div class="action-bar">
+    <button class="cancel-btn" (click)="clearCart()">
+        <img src="UI/App/bin.png" alt="Bin Icon" class="bin-icon" />
+        Cancel All
+    </button>
+    <button class="confirm-btn" (click)="confirmCart()">
+        <img src="UI/App/check.png" alt="Check Icon" class="check-icon" />
+        Confirm all items
+    </button>
+</div>
+
+<div class="cart-items">
+  <div *ngFor="let item of cartItems; let i = index">
+    <div class="product-card">
+      <div class="image-container">
+        <img [src]="item.image" [alt]="item.name">
+        <button class="remove-btn" (click)="removeItem(i)">
+          <img src="UI/App/bin.png" alt="Bin Icon" class="remove-icon"> 
+          Cancel
+        </button>
+      </div>
+      <div class="product-info">
+        <div class="product-details">
+          <h3>{{ item.name }} <span [ngStyle]="{'color': '#006765' }">x {{ item.quantity }}</span></h3>
+        </div>
+        <div class="price-and-controls">
+          <p>{{ item.price * item.quantity }} Baht</p>
+          <div class="quantity-controls">
+            <button class="decrement-btn" (click)="decrementQuantity(i)">-</button>
+            <button class="increment-btn" (click)="incrementQuantity(i)">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+<div class="white-space"></div>
+

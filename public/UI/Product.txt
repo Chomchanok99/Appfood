@@ -1,0 +1,27 @@
+Appetizers
+-----------------
+Chicken Wings 59
+Cheese Balls 49
+French Fires 55
+Spinach and Cheese Bake
+
+Main Courses
+-----------------
+Beef Steak 299
+Spaghetti Carbonara 179
+Carb meat fried rice 239
+Tom Yum Goong 269
+
+Beverages
+-----------------
+Thai Tea 50
+Latte 65
+Strawberry Italian Soda 60
+Ice Chocolate 65
+
+Desserts
+-----------------
+Chocolate Lava Cake 119
+Strawberry Bingsu 129
+Mixed Berry Pan Cake 99
+Croissant 40

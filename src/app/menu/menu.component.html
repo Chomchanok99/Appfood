@@ -1,0 +1,32 @@
+<div class="search-container">
+  <div class="search-bar">
+    <img src="UI/App/Search.png" alt="Search Icon" />
+    <input type="text" placeholder="Search">
+  </div>
+</div>
+
+<div class="yellow-bar">
+  <div class="categories">
+    <button (click)="scrollToCategory('Appetizers')">Appetizers</button>
+    <button (click)="scrollToCategory('Main Courses')">Main Courses</button>
+    <button (click)="scrollToCategory('Beverages')">Beverages</button>
+    <button (click)="scrollToCategory('Desserts')">Desserts</button>
+  </div>
+</div>
+
+<div class="products">
+  <div *ngFor="let category of getOrderedCategories()">
+    <h2 [id]="category">{{ category }}</h2>
+    <div class="product-card" *ngFor="let product of groupedProducts[category]">
+      <img [src]="product.image" [alt]="product.name">
+      <div class="product-details">
+        <h3>{{ product.name }}</h3>
+        <p>{{ product.price }} Baht</p>
+      </div>
+      <button class="add-to-cart" (click)="addToCart(product)">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+<div class="white-space"></div>
+
